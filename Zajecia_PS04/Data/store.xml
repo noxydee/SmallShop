@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<store>
+  <product id="2">
+    <name>PocoPhone</name>
+    <price>1299,99</price>
+    <category>1</category>
+  </product>
+  <product id="3">
+    <name>produkt xml0</name>
+    <price>12</price>
+    <category>1</category>
+  </product>
+  <product id="4">
+    <name>Produkt znaki t#@^Y?&gt;</name>
+    <price>124,99</price>
+    <category>4</category>
+  </product>
+  <product id="5">
+    <name>papaj</name>
+    <price>32</price>
+    <category>1</category>
+  </product>
+  <product id="6">
+    <name>wino</name>
+    <price>32</price>
+    <category>3</category>
+  </product>
+  <product id="7">
+    <name>citroen c3</name>
+    <price>8300</price>
+    <category>3</category>
+  </product>
+  <product id="8">
+    <name>Toyota supra</name>
+    <price>99999</price>
+    <category>1</category>
+  </product>
+  <product id="9">
+    <name>football ball</name>
+    <price>12</price>
+    <category>3</category>
+  </product>
+  <category id="1">
+    <ShortName>kategoria0</ShortName>
+    <LongName>dluganazwakategori0</LongName>
+  </category>
+  <category id="3">
+    <ShortName>kategoria1</ShortName>
+    <LongName>opis1</LongName>
+  </category>
+  <category id="4">
+    <ShortName>KAT 09 "?&gt;&lt;:#@!%&amp;$%**(</ShortName>
+    <LongName>Kategoria znaki</LongName>
+  </category>
+</store>
