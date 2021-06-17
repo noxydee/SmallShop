@@ -1,0 +1,115 @@
+﻿
+.submitx {
+    background-color: #fff;
+    border: none;
+    color: #666666;
+    padding: 6px 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+    .submitx:hover {
+        background-color: #ff76d8;
+        color: #fff;
+        text-decoration:none;
+    }
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:720px;
+    max-height:480px;
+}
+
+.User{
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-size: 120%;
+    margin-top: 10px;
+    border-color:white;
+    border-width:2px;
+    border-style:solid;
+    text-align:center;
+}
+
+.UserForm {
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-size: 120%;
+    margin-top: 10px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    text-align: center;
+}
+
+.Password {
+    visibility: hidden;
+    width: 600px;
+    background-color:grey;
+    color:#fff;
+    text-align:center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position:absolute;
+    left:-5%;
+    margin-top:20px;
+
+    z-index:1;
+}
+
+.Password::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%; /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -20px;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent grey transparent;
+
+}
+
+.User:hover .Password {
+    visibility: visible;
+}
+
+.card {
+    background-color:#e34db0;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius:10px;
+    color:white;
+}
+
+.cardx:hover {
+    color: #fff;
+    background-color: #e041aa;
+}
+
+.CustomContainer {
+    display: grid;
+    grid-auto-rows:100px;
+    grid-template-columns:1fr 1fr;
+    grid-gap: 20px;
+}
+
+.custom-form-control {
+    text-align: center;
+    block-size: 50%;
+    align-items: flex-start;
+    min-width: 200px;
+    max-width: 300px;
+    align-items: center;
+
+    margin:0 auto;
+    margin-block-end:10px;
+}
