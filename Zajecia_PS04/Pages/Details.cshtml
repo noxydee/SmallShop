@@ -1,0 +1,96 @@
+﻿@page
+@model Zajecia_PS04.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Szczegóły Produktu";
+}
+
+<head>
+
+
+</head>
+
+<body id="here">
+    <form method="post">
+        <div class="form-group">
+            <div class="row col-sm-12">
+                <button type="submit" class="btn btn btn-primary submitx">Dodaj do koszyka</button>
+            </div>
+        </div>
+        <br />
+
+        <input asp-for="DetailProduct.id" class="form-control" type="hidden">
+        <input asp-for="DetailProduct.name" class="form-control" type="hidden">
+        <input asp-for="DetailProduct.price" class="form-control" type="hidden">
+
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model =>
+    Model.ProductList[0].id)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model =>
+        Model.ProductList[0].name)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model =>
+            Model.ProductList[0].price)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model =>
+            Model.ProductList[0].CategoryLongName)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th scope="row">@Model.DetailProduct.id</th>
+                <td>@Model.DetailProduct.name</td>
+                <td>@Model.DetailProduct.price</td>
+                <td>@Model.DetailProduct.CategoryLongName</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+    <h2>@Model.DetailProduct.CategoryLongName</h2>
+
+    <input id="qparam" value="@Model.DetailProduct.name" type="hidden" />
+
+    <div id="photo"></div>
+    <div id="link_base"></div>
+
+    <script>
+        var kot = document.getElementById("qparam").value;
+        var myurl = "";
+
+        document.getElementById("linkx").src = myurl;
+    </script>
+
+    <script>
+        var script = document.createElement('script');
+        script.onload = function () {
+
+        }
+        script.src = myurl;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
+
+    <script>
+        function hndlr(response) {
+            console.log("aa");
+            for (var i = 0; i <= 0; i++) {
+                var item = response.items[i];
+                document.getElementById("photo").innerHTML += "<img src=" + item.link + ">";
+                
+            }
+        }
+    </script>
+
+</body>
+

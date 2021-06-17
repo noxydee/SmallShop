@@ -1,0 +1,40 @@
+﻿@page
+@model Zajecia_PS04.Pages.Admin.AdminAreaModel
+@{
+    ViewData["Title"] = "AdminArea";
+}
+
+<html>
+<body>
+    <h2>Admin Page</h2>
+    <div class="CustomContainer">
+        <div>
+            <div class="card">
+                <h3>Użytkownicy</h3>
+                <div id="ReactContent"></div>
+            </div>
+
+        </div>
+        <div>
+            <a class="card cardx text-center" asp-page="../Create">
+                <h3>Dodaj nowy Produkt</h3>
+
+            </a>
+            <a class="card cardx text-center" asp-page="../AddCategory">
+                <h3>Dodaj nową kategorię</h3>
+
+            </a>
+        </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prop-types/15.6.0/prop-types.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="@Url.Content("~/js/ReactAdmin.jsx")"></script>
+</body>
+</html>

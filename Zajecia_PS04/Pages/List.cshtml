@@ -1,0 +1,56 @@
+﻿@page
+@model Zajecia_PS04.Pages.ListModel
+@{
+    ViewData["Title"] = "Lista produktów";
+}
+
+<h2 type="sideway">Lista produktów</h2>
+<div class="row col-sm-12">
+    <a asp-page="Create" type="submit" class="btn btn-primary btn-large submitx">Dodaj</a>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+Model.ProductList[0].id)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+    Model.ProductList[0].name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.ProductList[0].price)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.ProductList[0].Category)
+            </th>
+            <th scope="col">Akcja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.ProductList)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => p.id)</th>
+                <td>@Html.DisplayFor(m => p.name)</td>
+                <td>@Html.DisplayFor(m => p.price)</td>
+                <td>@Html.DisplayFor(m=> p.Category)</td>
+                <td>
+                    <a type="submit" class="submitx" asp-page="Details" asp-route-id=@p.id>Szczegóły</a>
+                    @if (Model.IsAuthorizedUser)
+                    {
+                        <a type="submit" class="submitx" asp-page="ManageProduct/Edit" asp-route-id=@p.id>Edytuj</a>
+                        <a type="submit" class="submitx" asp-page="ManageProduct/Delete" asp-route-id=@p.id>Usuń</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

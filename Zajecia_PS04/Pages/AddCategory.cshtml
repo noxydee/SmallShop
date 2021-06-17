@@ -1,0 +1,31 @@
+﻿@page
+@model Zajecia_PS04.Pages.AddCategoryModel
+@{
+}
+
+<h2>Nowa Kategoria</h2>
+<br />
+<br />
+<div class="container">
+    <form class="form-horizontal" method="post">
+        <div class="form-group">
+            <h4><label asp-for="NewCategory.ShortName" class="control-label col-sm2"></label></h4>
+            <div class="col-sm-6">
+                <input asp-for="NewCategory.ShortName" class="form-control">
+                <span asp-validation-for="NewCategory.ShortName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <h4><label asp-for="NewCategory.LongName" class="control-label col-sm2"></label></h4>
+            <div class="col-sm-6">
+                <input asp-for="NewCategory.LongName" class="form-control">
+                <span asp-validation-for="NewCategory.LongName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn btn-primary submitx">Zatwierdź</button>
+            </div>
+        </div>
+    </form>
+</div>

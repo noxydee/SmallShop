@@ -1,0 +1,51 @@
+﻿@page
+@model Zajecia_PS04.Pages.CartModel
+@{
+
+}
+
+<h2>Shopping cart</h2>
+<br />
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+Model.Cart[0].id)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+    Model.Cart[0].name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.Cart[0].price)
+            </th>
+            <th scope="col">
+                Akcja
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Cart)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => p.id)</th>
+                <td>@Html.DisplayFor(m => p.name)</td>
+                <td>@Html.DisplayFor(m => p.price)</td>
+                <td>
+                    <a type="submit" class="submitx" asp-page="DeleteCart" asp-route-id=@p.id>Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+    <th scope="col">Qt:@Model.Quantity</th>
+    <th scope="col"></th>
+    <th scope="col">Price:@Model.summary</th>
+    <th scope="col"></th>
+    </tfoot>
+</table>
+

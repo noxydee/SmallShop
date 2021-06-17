@@ -1,0 +1,49 @@
+﻿@page
+@model Zajecia_PS04.Pages.CreateModel
+@{
+    ViewData["Title"] = "Nowy produkt";
+}
+
+
+<h2>Nowy produkt</h2>
+<br />
+<br />
+<div class="container">
+    <form class="form-horizontal" method="post">
+        <div class="form-group">
+            <h4><label asp-for="newProduct.name" class="control-label col-sm2"></label></h4>
+            <div class="col-sm-6">
+                <input asp-for="newProduct.name" class="form-control">
+                <span asp-validation-for="newProduct.name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <h4><label asp-for="newProduct.price" class="control-label col-sm2"></label></h4>
+            <div class="col-sm-6">
+                <input asp-for="newProduct.price" class="form-control">
+                <span asp-validation-for="newProduct.price" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h4><label asp-for="newProduct.Category" class="control-label col-sm2"></label></h4>
+            <div class="col-sm-6">
+                <select list="Categories" asp-for="newProduct.Category" class="form-control custom-select">
+                <datalist id="Categories">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <option>@category.ShortName</option>
+                    }
+                </datalist>
+                </select>
+                <span asp-validation-for="newProduct.Category" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn btn-primary submitx">Zatwierdź</button>
+            </div>
+        </div>
+    </form>
+</div>

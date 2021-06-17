@@ -1,0 +1,78 @@
+﻿@page
+@model Zajecia_PS04.Pages.DetailCategoryModel
+@{
+}
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+Model.DetailCategory.Id)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+    Model.DetailCategory.ShortName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.DetailCategory.LongName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th scope="row">@Model.DetailCategory.Id</th>
+            <td>@Model.DetailCategory.ShortName</td>
+            <td>@Model.DetailCategory.LongName</td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<h2>@Model.DetailCategory.ShortName</h2>
+
+<br />
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+Model.ProductList[0].id)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+    Model.ProductList[0].name)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.ProductList[0].price)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.ProductList[0].Category)
+            </th>
+            <th scope="col">Akcja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.ProductList)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => p.id)</th>
+                <td>@Html.DisplayFor(m => p.name)</td>
+                <td>@Html.DisplayFor(m => p.price)</td>
+                <td>@Model.DetailCategory.ShortName</td>
+                <td>
+                    <a type="submit" class="submitx" asp-page="Details" asp-route-id=@p.id>Szczegóły</a>
+                    <a type="submit" class="submitx" asp-page="Edit" asp-route-id=@p.id>Edytuj</a>
+                    <a type="submit" class="submitx" asp-page="Delete" asp-route-id=@p.id>Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

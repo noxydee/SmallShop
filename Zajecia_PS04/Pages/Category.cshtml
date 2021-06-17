@@ -1,0 +1,48 @@
+﻿@page 
+@model Zajecia_PS04.Pages.CategoryModel
+@{
+    ViewData["Title"] = "Kategorie";
+}
+
+<h2>Zarządzaj Kategoriami</h2>
+<div class="row col-sm-12">
+    <a asp-page="AddCategory" type="submit" class="btn btn-primary btn-large submitx">Dodaj</a>
+</div>
+</br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+Model.CategoryList[0].Id)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+    Model.CategoryList[0].ShortName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model =>
+        Model.CategoryList[0].LongName)
+            </th>
+            <th scope="col">Akcja</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.CategoryList)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(m => p.Id)</th>
+                <td>@Html.DisplayFor(m => p.ShortName)</td>
+                <td>@Html.DisplayFor(m => p.LongName)</td>
+                <td>
+                    <a type="submit" class="submitx" asp-page="DetailCategory" asp-route-id=@p.Id>Szczegóły</a>
+                    @if (Model.IsAuthorizedUser)
+                    {
+                        <a type="submit" class="submitx" asp-page="ManageProduct/EditCategory" asp-route-id=@p.Id>Edytuj</a>
+                        <a type="submit" class="submitx" asp-page="ManageProduct/DeleteCategory" asp-route-id="@p.Id">Usuń</a>
+                    }
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>
